@@ -1,0 +1,16 @@
+  975  yarn install
+  976  yarn dev
+  977  yarn dev
+  978  yarn dev
+  979  git clone https://github.com/thirdweb-example/nft-staking-app.git\n
+  980  cd nft-staking-app
+  981  code.
+  982  yarn install
+  983  code .
+  984  yarn dev
+  985  yarn dev
+  986  yarn dev
+  987  yarn dev
+  988  git add .
+  989  git commit -m "Restore working state with perfect NFT display and layout"
+  990  git push origin main

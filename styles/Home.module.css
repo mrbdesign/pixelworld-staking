@@ -1,0 +1,173 @@
+.container {
+  margin-top: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 0 24px;
+}
+
+.h1 {
+  margin-bottom: 0px;
+}
+
+.explain {
+  font-size: 1.125rem;
+}
+
+.divider {
+  width: 50%;
+  border-color: grey;
+  opacity: 0.25;
+}
+
+.smallDivider {
+  width: 25%;
+  border-color: grey;
+  margin-top: 64px;
+  opacity: 0.25;
+}
+
+.nftBoxGrid {
+  width: 1200px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.nftBox {
+  width: 336px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  padding: 16px;
+}
+
+.nftMedia {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 15px;
+}
+
+.tokenGrid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  width: 1600px;
+  max-width: 95vw;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.tokenItem {
+  width: 35%;
+  height: 120px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  gap: 16px;
+}
+
+.tokenLabel {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tokenValue {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+.centerButton {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 16px 0;
+}
+
+/* On mobile, make the .tokenGrid stack vertically */
+@media screen and (max-width: 850px) {
+  .tokenGrid {
+    flex-direction: column;
+    width: 90vw;
+    max-width: 90vw;
+    gap: 2%;
+  }
+
+  .tokenItem {
+    width: 90%;
+    height: 120px;
+  }
+}
+
+.spacerTop {
+  margin-top: 16px;
+}
+
+.bigSpacerTop {
+  margin-top: 32px;
+}
+
+.spacerBottom {
+  margin-bottom: 16px;
+}
+
+.cardName {
+  margin-bottom: 0px;
+}
+
+.optionSelectBox {
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  width: 48%;
+  min-height: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  cursor: pointer;
+}
+
+.selectBoxTitle {
+  font-size: 1.75rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.selectBoxDescription {
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* Between 1200 and 800 px, change .optionSelectBox width to 45% */
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .optionSelectBox {
+    width: 45%;
+  }
+}
+
+/* On mobile, make .optionSelectBox width 90% */
+@media screen and (max-width: 800px) {
+  .optionSelectBox {
+    width: 90%;
+    margin-top: 16px;
+  }
+}
