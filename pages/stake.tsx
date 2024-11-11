@@ -31,12 +31,21 @@ const Stake: NextPage = () => {
     "token"
   );
   const { contract, isLoading } = useContract(stakingContractAddress);
-  const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
+  const { data: ownedNfts, error: nftError } = useOwnedNFTs(nftDropContract, address);
   const { data: tokenBalance } = useTokenBalance(tokenContract, address);
   const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
   const { data: stakedTokens } = useContractRead(contract, "getStakeInfo", [
     address,
   ]);
+
+  useEffect(() => {
+    if (nftError) {
+      console.log("NFT Error:", nftError);
+    }
+    if (ownedNfts) {
+      console.log("Owned NFTs:", ownedNfts);
+    }
+  }, [ownedNfts, nftError]);
 
   useEffect(() => {
     if (!contract || !address) return;
@@ -96,7 +105,6 @@ const Stake: NextPage = () => {
           auth={{
             loginOptional: true
           }}
-       
         />
       ) : (
         <>
@@ -147,11 +155,18 @@ const Stake: NextPage = () => {
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               <div className={styles.nftBox} key={nft.metadata.id.toString()}>
-                <ThirdwebNftMedia
-                  metadata={nft.metadata}
-                  className={styles.nftMedia}
-                />
-                <h3>{nft.metadata.name}</h3>
+                {nft.metadata ? (
+                  <ThirdwebNftMedia
+                    metadata={nft.metadata}
+                    className={styles.nftMedia}
+                    onError={(e) => {
+                      console.log("Media loading error:", e);
+                    }}
+                  />
+                ) : (
+                  <div>Loading NFT metadata...</div>
+                )}
+                <h3>{nft.metadata?.name || "Unnamed NFT"}</h3>
                 <div className={styles.centerButton}>
                   <Web3Button
                     contractAddress={stakingContractAddress}
