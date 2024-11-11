@@ -2,19 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['ipfs.io', 'ipfs.thirdweb.com'],
+    domains: ['ipfs.io', 'ipfs.thirdweb.com', 'bafybeidtkw5pp2534yv7cz6dckf5z3ooowpwdio7yauezmd4devghmttve.ipfs.cf-ipfs.com'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'ipfs.thirdweb.com',
+        hostname: '**.ipfs.cf-ipfs.com',
         port: '',
         pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'ipfs.io',
-        port: '',
-        pathname: '/ipfs/**',
       }
     ],
     dangerouslyAllowSVG: true,
@@ -24,4 +18,3 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-
