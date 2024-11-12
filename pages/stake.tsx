@@ -155,17 +155,10 @@ const Stake: NextPage = () => {
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               <div className={styles.nftBox} key={nft.metadata.id.toString()}>
-                {nft.metadata ? (
-                  <ThirdwebNftMedia
-                    metadata={nft.metadata}
-                    className={styles.nftMedia}
-                    onError={(e) => {
-                      console.log("Media loading error:", e);
-                    }}
-                  />
-                ) : (
-                  <div>Loading NFT metadata...</div>
-                )}
+                <ThirdwebNftMedia
+                  metadata={nft.metadata}
+                  className={styles.nftMedia}
+                />
                 <h3>{nft.metadata?.name || "Unnamed NFT"}</h3>
                 <div className={styles.centerButton}>
                   <Web3Button
