@@ -31,21 +31,12 @@ const Stake: NextPage = () => {
     "token"
   );
   const { contract, isLoading } = useContract(stakingContractAddress);
-  const { data: ownedNfts, error: nftError } = useOwnedNFTs(nftDropContract, address);
+  const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
   const { data: tokenBalance } = useTokenBalance(tokenContract, address);
   const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
   const { data: stakedTokens } = useContractRead(contract, "getStakeInfo", [
     address,
   ]);
-
-  useEffect(() => {
-    if (nftError) {
-      console.log("NFT Error:", nftError);
-    }
-    if (ownedNfts) {
-      console.log("Owned NFTs:", ownedNfts);
-    }
-  }, [ownedNfts, nftError]);
 
   useEffect(() => {
     if (!contract || !address) return;
