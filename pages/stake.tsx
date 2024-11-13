@@ -68,7 +68,7 @@ const Stake: NextPage = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.h1}>Stake NFTs for &apos;PERKS&apos;</h1>
+      <h1 className={styles.h1}>Stake NFTs for &apos;PERX&apos;</h1>
       <div style={{ padding: "5px 0" }}>
         <Image
           src="/icons/PERKS.png"

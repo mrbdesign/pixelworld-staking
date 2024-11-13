@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>PIXEL WORLD Staking</title>
-        <meta name="description" content="Stake your PIXEL WORLD NFTss for PIXEL PERX" />
+        <meta name="description" content="Stake your PIXEL WORLD NFTs for PIXEL PERX" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
